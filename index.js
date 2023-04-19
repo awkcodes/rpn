@@ -40,6 +40,11 @@ function rpnCalculator(input) {
   }
   return exp_numbers.pop();
 }
-const 
-const result = rpnCalculator('5 1 2 + 4 * + 3 -'); // evaluates to 14
-console.log(result);
+// html interface
+function getvalue(){
+const formInput = document.getElementById('rpn-input');
+const rpnResult = document.getElementById('rpn-result');
+    const expression = formInput.value;
+    console.log(rpnResult)
+    rpnResult.innerText = `result is :: ${rpnCalculator(expression)}`;
+}

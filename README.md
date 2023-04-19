@@ -1,7 +1,6 @@
 # RPN (Reverse Polish Notation) calculator  
 
 TODO:
-- [ ] adding input facility
-- [ ] html interface   
+- [x] html interface   
 - [ ] node / cmd interface
 
