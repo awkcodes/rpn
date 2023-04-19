@@ -42,9 +42,15 @@ function rpnCalculator(input) {
 }
 // html interface
 function getvalue(){
-const formInput = document.getElementById('rpn-input');
-const rpnResult = document.getElementById('rpn-result');
+    const formInput = document.getElementById('rpn-input');
+    const rpnResult = document.getElementById('rpn-result');
     const expression = formInput.value;
     console.log(rpnResult)
+    let result;
+    try {
+        result = rpnCalculator(expression);
+    } catch(e) {
+        rpnResult.innerText = `error occured :: ${e}`;
+    }
     rpnResult.innerText = `result is :: ${rpnCalculator(expression)}`;
 }
