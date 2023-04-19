@@ -40,6 +40,7 @@ function rpnCalculator(input) {
   }
   return exp_numbers.pop();
 }
+
 // html interface
 function getvalue(){
     const formInput = document.getElementById('rpn-input');
@@ -51,6 +52,16 @@ function getvalue(){
         result = rpnCalculator(expression);
     } catch(e) {
         rpnResult.innerText = `error occured :: ${e}`;
+        return;
     }
     rpnResult.innerText = `result is :: ${rpnCalculator(expression)}`;
 }
+
+// nodejs/cli interface
+function readCli(){
+    let args = process.argv.slice(2);
+    let expression = args.join(' ');
+    console.log(rpnCalculator(expression));
+}
+
+readCli()
