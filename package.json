@@ -1,0 +1,19 @@
+{
+  "name": "rpnclc",
+  "version": "1.0.0",
+  "description": "simple rpn calculator",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awkcodes/rpn.git"
+  },
+  "author": "awk (abdallah khalaf)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/awkcodes/rpn/issues"
+  },
+  "homepage": "https://github.com/awkcodes/rpn#readme"
+}

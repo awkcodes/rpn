@@ -1,8 +1,8 @@
 const exp_numbers = [];
 
-function handleOperator(operator) {
+function handleOperator(operator: string) {
   const [b, a] = [exp_numbers.pop(), exp_numbers.pop()];
-  let result;
+  let result: number;
   switch (operator) {
     case '+':
       result = a + b;
@@ -22,11 +22,11 @@ function handleOperator(operator) {
   exp_numbers.push(result);
 }
 
-function handleDigit(digit) {
+function handleDigit(digit: string) {
   exp_numbers.push(parseFloat(digit));
 }
 
-function rpnCalculator(input) {
+function rpnCalculator(input: string) {
   const tokens = input.split(' ');
   for (const token of tokens) {
     if (!isNaN(parseFloat(token))) {
@@ -43,18 +43,18 @@ function rpnCalculator(input) {
 
 // html interface
 function getvalue(){
-    const formInput = document.getElementById('rpn-input');
+    const formInput = document.getElementById('rpn-input') as HTMLTextAreaElement;
     const rpnResult = document.getElementById('rpn-result');
     const expression = formInput.value;
     console.log(rpnResult)
-    let result;
+    let result: number;
     try {
         result = rpnCalculator(expression);
     } catch(e) {
         rpnResult.innerText = `error occured :: ${e}`;
         return;
     }
-    rpnResult.innerText = `result is :: ${rpnCalculator(expression)}`;
+    rpnResult.innerText = `result is :: ${result}`;
 }
 
 // nodejs/cli interface
